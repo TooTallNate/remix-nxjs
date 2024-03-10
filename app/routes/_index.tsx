@@ -1,7 +1,6 @@
 import { useLoaderData } from "@remix-run/react";
-import { LoaderFunctionArgs } from "@remix-run/server-runtime";
 
-export async function loader(args: LoaderFunctionArgs) {
+export async function loader() {
   return { version: Switch.version.nxjs };
 }
 
