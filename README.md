@@ -18,7 +18,8 @@ Run the Vite dev server:
 npm run dev
 ```
 
-> In development, the `nx.js` APIs are not present, so you should create mock data / function calls
+> [!IMPORTANT]
+> In development, the `nx.js` APIs are not present, so you should create mock data / function calls. You can check `typeof Switch === 'undefined'` to detect when running in dev mode.
 
 ## Generate a `.nro`
 
