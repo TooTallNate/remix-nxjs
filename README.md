@@ -2,6 +2,14 @@
 
 This [Remix template](https://remix.run/) is configured to output a Nintendo Switch homebrew application which serves the Remix application, using [nx.js](https://nxjs.n8.io/). You can use nx.js APIs in your `loader()`/`action()` functions in your Remix routes.
 
+## Getting Started
+
+Run the following command to copy this template:
+
+```shellscript
+npx create-remix@latest --template https://github.com/TooTallNate/nx.js-remix
+```
+
 ## Development
 
 Run the Vite dev server:
