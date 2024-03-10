@@ -27,3 +27,12 @@ npm run nro
 ```
 
 Place the `.nro` file onto your Switch's SD card inside the "switch" directory, and launch the app through the Homebrew Launcher (album menu). While the app is running, you can access your Remix application from a web browser using the IP address and port shown on the Switch screen.
+
+### `.nro` Metadata
+
+* The `name` property in `package.json` is used for the name in the NRO file, and will be shown in the Homebrew Launcher
+* The `version` property in `package.json` is used for the version in the NRO file, and will be shown in the Homebrew Launcher
+* The `author` property in `package.json` is used for the author in the NRO file, and will be shown in the Homebrew Launcher
+* Add a square `icon.jpg` file in the root of the project to customize the icon that the NRO file will show
+* Set the `titleId` property in `package.json` to a random 16 digit hex string (example: `012a792e7a730000`)
+  * This allows your app to access Save Data via `localStorage` in `loader()`/`action()` functions
