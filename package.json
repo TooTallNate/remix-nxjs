@@ -1,7 +1,6 @@
 {
-  "name": "my-nxjs-remix-app",
-  "version": "0.0.0",
   "private": true,
+  "sideEffects": false,
   "type": "module",
   "description": "nx.js app that serves a Remix application over HTTP",
   "scripts": {
@@ -9,7 +8,6 @@
     "nro": "nxjs-nro",
     "nsp": "nxjs-nsp"
   },
-  "license": "MIT",
   "devDependencies": {
     "@nx.js/nro": "^0.0.38",
     "@nx.js/nsp": "^0.0.38",
