@@ -7,7 +7,7 @@ This [Remix template](https://remix.run/) is configured to output a Nintendo Swi
 Run the following command to copy this template:
 
 ```sh
-npx create-remix@latest --template https://github.com/TooTallNate/nx.js-remix
+npx create-remix@latest --template TooTallNate/remix-nxjs
 ```
 
 ## Development
