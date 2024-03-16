@@ -9,21 +9,20 @@
     "nsp": "nxjs-nsp"
   },
   "devDependencies": {
-    "@nx.js/nro": "^0.0.38",
-    "@nx.js/nsp": "^0.0.38",
+    "@nx.js/nro": "^0.0.39",
+    "@nx.js/nsp": "^0.0.39",
     "@remix-run/dev": "^2.8.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "esbuild": "^0.17.19",
-    "nxjs-runtime": "^0.0.38",
+    "nxjs-runtime": "^0.0.39",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
-    "@nx.js/http": "^0.0.1",
-    "@remix-run/cloudflare": "^2.8.0",
+    "@nx.js/http": "^0.0.2",
     "@remix-run/react": "^2.8.0",
     "@remix-run/server-runtime": "^2.8.0",
     "isbot": "^4"
