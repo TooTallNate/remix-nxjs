@@ -1,4 +1,5 @@
 {
+  "name": "remix-nxjs",
   "private": true,
   "sideEffects": false,
   "type": "module",
