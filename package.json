@@ -5,7 +5,9 @@
   "type": "module",
   "description": "nx.js app that serves a Remix application over HTTP",
   "scripts": {
-    "build": "remix vite:build && rm -rf romfs && esbuild --bundle --sourcemap --sources-content=false --target=es2022 --format=esm src/main.ts --outfile=romfs/main.js && cp -r build/client romfs/public",
+    "build": "remix vite:build && rm -rf romfs && esbuild --bundle --sourcemap --sources-content=false --target=es2022 --define:DEV_MODE=false --format=esm src/main.ts --outfile=romfs/main.js && cp -r build/client romfs/public",
+    "build:dev": "remix vite:build && rm -rf romfs && esbuild --bundle --sourcemap --sources-content=false --target=es2022 --define:DEV_MODE=true --format=esm src/main.ts --outfile=romfs/main.js && cp -r build/client romfs/public",
+    "dev": "node dev.js",
     "nro": "nxjs-nro",
     "nsp": "nxjs-nsp"
   },
@@ -15,6 +17,7 @@
     "@remix-run/dev": "^2.8.0",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "chokidar": "^3.6.0",
     "esbuild": "^0.17.19",
     "nxjs-runtime": "^0.0.39",
     "react": "^18.2.0",
@@ -26,6 +29,9 @@
     "@nx.js/http": "^0.0.2",
     "@remix-run/react": "^2.8.0",
     "@remix-run/server-runtime": "^2.8.0",
-    "isbot": "^4"
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "isbot": "^4",
+    "serve-static": "^1.15.0"
   }
 }

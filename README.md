@@ -12,16 +12,24 @@ npx create-remix@latest --template TooTallNate/remix-nxjs
 
 ## Development
 
-Run the Vite dev server:
+The development server mode involves running the Remix server `.nro` file on the Switch, while also running the "dev" script on your local machine:
 
-```sh
-npm run dev
-```
+1. Run the `build:dev` script:
+  ```sh
+  npm run build:dev
+  ```
+1. Create the dev mode `.nro` file:
+  ```sh
+  npm run nro
+  ```
+1. Upload the `.nro` file to your Switch and launch the app from the Homebrew Launcher
+1. Run the `dev` script on your local machine, passing the URL to your Switch Remix app. This script monitors for file changes in the `app` directory, rebuilds the Remix app, and then uploads the new server bundle to the `/__dev` endpoint for the Switch to use for future HTTP requests:
+  ```sh
+  # IMPORTANT: Replace with your own Switch's IP address
+  npm run dev http://192.168.86.103:8080
+  ```
 
-> [!IMPORTANT]
-> In development, the `nx.js` APIs are not present, so you should create mock data / function calls. You can check `typeof Switch === 'undefined'` to detect when running in dev mode.
-
-## Generate a `.nro`
+## Generate a production `.nro`
 
 First, run the `build` script to build your Remix app and place the client-side assets into the "romfs" directory:
 
