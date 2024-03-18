@@ -10,6 +10,9 @@ dependencies:
   '@remix-run/server-runtime':
     specifier: ^2.8.0
     version: 2.8.0
+  '@tootallnate/nacp':
+    specifier: ^0.0.1
+    version: 0.0.1
   cors:
     specifier: ^2.8.5
     version: 2.8.5
@@ -25,11 +28,11 @@ dependencies:
 
 devDependencies:
   '@nx.js/nro':
-    specifier: ^0.0.39
-    version: 0.0.39
+    specifier: ^0.0.40
+    version: 0.0.40
   '@nx.js/nsp':
-    specifier: ^0.0.39
-    version: 0.0.39
+    specifier: ^0.0.40
+    version: 0.0.40
   '@remix-run/dev':
     specifier: ^2.8.0
     version: 2.8.0(vite@5.1.0)
@@ -46,8 +49,8 @@ devDependencies:
     specifier: ^0.17.19
     version: 0.17.19
   nxjs-runtime:
-    specifier: ^0.0.39
-    version: 0.0.39
+    specifier: ^0.0.40
+    version: 0.0.40
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1879,8 +1882,8 @@ packages:
       mime: 4.0.1
     dev: false
 
-  /@nx.js/nro@0.0.39:
-    resolution: {integrity: sha512-Vk9UedXXGVxxEqYJuEKU2MrDpBzWMuTkDXUsbqwnNBhRfb0HSLBoEvlOURWZmz02X1LM+cyiireQqHpU3UkyMw==}
+  /@nx.js/nro@0.0.40:
+    resolution: {integrity: sha512-z9uS9uHScR6Qbx6qaQDU9MsRUMPVDOU+RNkPhmzUVjMYw2CnVEBzDuM0hcuwuSsnCTtZsEU9WYM+5WAQRwuhjw==}
     hasBin: true
     dependencies:
       '@nx.js/patch-nacp': 0.0.1
@@ -1892,8 +1895,8 @@ packages:
       terminal-image: 2.0.0
     dev: true
 
-  /@nx.js/nsp@0.0.39:
-    resolution: {integrity: sha512-Zf3IsKmKiwJSPKwDEYHSFGf5qtwsjIW3EhqwGX/CXCi/bTrOUOv1T2CvjEFiZUlC0Ri588JhAhEEtuyRnHIk2g==}
+  /@nx.js/nsp@0.0.40:
+    resolution: {integrity: sha512-ki0zMOCF4SJ5qt+E6DYEmGgzL5CS6+snr8MPT+DAGGDBs3xxQFMuzQ6Sct2YBO7p2fV2LVN/MJcUNo4tjezfyQ==}
     hasBin: true
     dependencies:
       '@nx.js/patch-nacp': 0.0.1
@@ -2213,7 +2216,6 @@ packages:
 
   /@tootallnate/nacp@0.0.1:
     resolution: {integrity: sha512-SodmIB6YIEj6oVSSRzi5Ll2Mz8EhlEkYFJN4UOLrEcQMkwUo7Fv3ZXcY2AnlhcQtlUABusZgwZkYHzbtpg/Ctg==}
-    dev: true
 
   /@tootallnate/nro@0.1.0:
     resolution: {integrity: sha512-4BtKlCxgj6TyJCwekkRTzaIJfEnVn97HbOLmJUwNT4ol/mZJ4smMohfU8zaYKnQiPjVdLhZ08qKH8kQI2xszjQ==}
@@ -4550,8 +4552,8 @@ packages:
       path-key: 3.1.1
     dev: true
 
-  /nxjs-runtime@0.0.39:
-    resolution: {integrity: sha512-YKJcg6vW1wI1yHbqfPFCk295eTGzZ2/PlZtJiCvHUlFdMzrFLoVqYAuQbA3ssy1Fir21/qmjayH68tciCIi+Kg==}
+  /nxjs-runtime@0.0.40:
+    resolution: {integrity: sha512-zwCptz7K7sSGQhRu+gMRZIdpu1iu3a8UMT9mCrzsou1dCJpVbXgPvTn86Nx0jFCveRqx+VL9ReUL2OK333YBgA==}
     dev: true
 
   /object-assign@4.1.1:
