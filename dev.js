@@ -11,7 +11,7 @@ if (!baseUrl) {
     console.log('Error! You must specify the URL of the Switch application!');
     process.exit(2);
 }
-console.log(`Switch URL: ${baseUrl}`);
+console.log(`Switch URL: ${new URL(baseUrl)}`);
 
 const url = new URL("/__dev", baseUrl);
 
@@ -21,6 +21,8 @@ const host = Object.values(networkInterfaces())
 if (!host) {
   throw new Error("Could not determine host IP address");
 }
+const DEV_HOST = `http://${host.address}:8080/`;
+console.log(`  Host URL: ${DEV_HOST}`);
 
 const app = express();
 app.use(cors());
@@ -38,7 +40,7 @@ chokidar
         stdio: "inherit",
         env: {
           ...process.env,
-          DEV_HOST: `http://${host.address}:8080/`,
+          DEV_HOST,
         },
       });
     } catch (err) {
