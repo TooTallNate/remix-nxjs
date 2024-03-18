@@ -40,15 +40,23 @@ http.listen({
   },
 });
 
+// Prevent auto-lock / screen dimming
+Switch.setMediaPlaybackState(true);
+addEventListener("unload", () => {
+  Switch.setMediaPlaybackState(false);
+});
+
 const { ip } = Switch.networkInfo();
 const url = `http://${ip}:${port}`;
 console.log(`HTTP server listening at: ${url}`);
 
 if (DEV_MODE) {
-  console.log()
-  console.log('\x1B[1m\x1B[33mDEVELOPMENT MODE\x1B[39m\x1B[22m');
-  console.log(`\x1B[33mRun the following command on your local machine:\x1B[39m`);
-  console.log()
-  console.log(`\x1B[36m  npm run dev ${url}\x1B[39m`)
-  console.log()
+  console.log();
+  console.log("\x1B[1m\x1B[33mDEVELOPMENT MODE\x1B[39m\x1B[22m");
+  console.log(
+    `\x1B[33mRun the following command on your local machine:\x1B[39m`
+  );
+  console.log();
+  console.log(`  $ \x1B[36mnpm run dev ${url}\x1B[39m`);
+  console.log();
 }
