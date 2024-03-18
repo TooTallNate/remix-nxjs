@@ -30,16 +30,23 @@ app.listen(8080);
 chokidar
   .watch("app", { ignoreInitial: true })
   .on("all", async (event, path) => {
-    console.log("Rebuilding");
+    console.log(`${event}: ${path}`);
+
     console.time("Rebuilding");
-    spawnSync("remix", ["vite:build"], {
-      //stdio: 'inherit',
-      env: {
-        ...process.env,
-        DEV_HOST: `http://${host.address}:8080/`,
-      },
-    });
-    console.timeEnd("Rebuilding");
+    try {
+      spawnSync("remix", ["vite:build"], {
+        stdio: "inherit",
+        env: {
+          ...process.env,
+          DEV_HOST: `http://${host.address}:8080/`,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+      return;
+    } finally {
+      console.timeEnd("Rebuilding");
+    }
 
     const bundle = await build({
       entryPoints: ["build/server/index.js"],
@@ -50,9 +57,20 @@ chokidar
     const output = bundle.outputFiles[0];
     console.log("Updating dev server");
     console.time(`Dev server ready`);
-    await fetch(url, {
-      method: "POST",
-      body: output.contents,
-    });
-    console.timeEnd(`Dev server ready`);
+    try {
+      await fetch(url, {
+        method: "POST",
+        body: output.contents,
+      });
+    } catch (err) {
+      if (err.cause?.code === "ECONNREFUSED") {
+        console.error(
+          `ERROR: Please ensure the Remix app is running on your Switch in Development Mode`
+        );
+      } else {
+        console.error(err);
+      }
+    } finally {
+      console.timeEnd(`Dev server ready`);
+    }
   });
