@@ -1,5 +1,5 @@
-import { networkInterfaces } from "os";
-import { spawnSync } from "child_process";
+import { networkInterfaces } from "node:os";
+import { spawnSync } from "node:child_process";
 import { build } from "esbuild";
 import chokidar from "chokidar";
 import express from "express";
@@ -8,8 +8,8 @@ import cors from "cors";
 
 const baseUrl = process.argv[2];
 if (!baseUrl) {
-    console.log('Error! You must specify the URL of the Switch application!');
-    process.exit(2);
+  console.log("Error! You must specify the URL of the Switch application!");
+  process.exit(2);
 }
 console.log(`Switch URL: ${new URL(baseUrl)}`);
 
@@ -58,7 +58,7 @@ chokidar
     });
     const output = bundle.outputFiles[0];
     console.log("Updating dev server");
-    console.time(`Dev server ready`);
+    console.time("Dev server ready");
     try {
       await fetch(url, {
         method: "POST",
@@ -67,12 +67,12 @@ chokidar
     } catch (err) {
       if (err.cause?.code === "ECONNREFUSED") {
         console.error(
-          `ERROR: Please ensure the Remix app is running on your Switch in Development Mode`
+          "ERROR: Please ensure the Remix app is running on your Switch in Development Mode"
         );
       } else {
         console.error(err);
       }
     } finally {
-      console.timeEnd(`Dev server ready`);
+      console.timeEnd("Dev server ready");
     }
   });
